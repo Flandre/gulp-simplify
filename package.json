@@ -1,0 +1,23 @@
+{
+  "name": "gulp-simplify",
+  "version": "1.0.0",
+  "description": "## use",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flandre/gulp-simplify.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Flandre/gulp-simplify/issues"
+  },
+  "homepage": "https://github.com/Flandre/gulp-simplify#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
