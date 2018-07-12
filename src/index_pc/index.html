@@ -41,12 +41,12 @@
           <li data-target="#carousel-1" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-          <div class="item active">
+          <div class="item active" data-bgcolor="#FBCB61">
             <a href="#" target="_blank">
               <img class="ref-param" style="margin: 0 auto;" src="images/banner_01.png">
             </a>
           </div>
-          <div class="item">
+          <div class="item" data-bgcolor="#c9e0fe">
             <a href="#" target="_blank">
               <img class="ref-param" style="margin: 0 auto;" src="images/banner_02.png">
             </a>
@@ -54,7 +54,33 @@
         </div>
       </div>
     </div>
-
+  </div>
+  <!--服务-->
+  <div class="service">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-3 service-item">
+          <img src="images/icon1.png">
+          <p class="title">短期租赁</p>
+          <p class="desc hidden-xs">满足短期用车需求</p>
+        </div>
+        <div class="col-xs-3 service-item">
+          <img src="images/icon2.png">
+          <p class="title">长期租赁</p>
+          <p class="desc hidden-xs">长租一次，告别常租</p>
+        </div>
+        <div class="col-xs-3 service-item">
+          <img src="images/icon3.png">
+          <p class="title">定制车租赁</p>
+          <p class="desc hidden-xs">按需提供指定车型</p>
+        </div>
+        <div class="col-xs-3 service-item">
+          <img src="images/icon4.png">
+          <p class="title">商务车服务</p>
+          <p class="desc hidden-xs">企业出行，一步到位</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 
@@ -63,9 +89,14 @@
   <script src="../resource/bootstrap.min.js"></script>
   <script>
     // 轮播图
-    $('#carousel-banner').carousel({
-      interval: 1000,
-    })
+    $('.carousel').css('background', $('.carousel .carousel-inner .item.active').attr('data-bgcolor'))
+
+    $('#carousel-banner')
+      .carousel({ interval: 5000 })
+      .on('slide.bs.carousel',function(e){
+        console.log($(e.relatedTarget).attr('data-bgcolor'))
+        $('.carousel').css('background', $(e.relatedTarget).attr('data-bgcolor'))
+      });
   </script>
 </body>
 </html>
