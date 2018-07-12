@@ -2,8 +2,6 @@ const gulp = require('gulp')
 const del = require('del')
 const less = require('gulp-less')
 
-
-
 gulp.task('clean', function(){
   return del(['dist'])
 })
