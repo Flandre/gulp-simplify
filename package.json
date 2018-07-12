@@ -16,7 +16,9 @@
     "url": "https://github.com/Flandre/gulp-simplify/issues"
   },
   "homepage": "https://github.com/Flandre/gulp-simplify#readme",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
   "devDependencies": {
     "gulp": "^3.9.1"
   }
