@@ -1,0 +1,68 @@
+body {
+  background: #f2f2f2;
+}
+.top-panel {
+  height: 60px;
+  background: #fff;
+  .container {
+    line-height: 60px;
+    .logo {
+      float: left;
+    }
+    .right-infos {
+      float: right;
+      .phone,
+      .app {
+        display: inline-block;
+        img {
+          vertical-align: middle;
+        }
+        span {
+          color: #0E1470;
+          display: inline-block;
+          vertical-align: middle;
+          &.name {
+            font-size: 16px;
+            margin-left: 10px;
+          }
+          &.phone-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+          }
+        }
+      }
+      .app {
+        margin-left: 60px;
+        position: relative;
+        cursor: pointer;
+        .qrcode-container {
+          position: absolute;
+          padding: 10px;
+          right: 0;
+          background: #fff;
+          display: none;
+          .qrcode-name {
+            line-height: 1;
+            margin-top: 10px;
+            text-align: center;
+            span {
+              color: #666666;
+              font-size: 12px;
+              line-height: 17px;
+              text-align: center;
+            }
+          }
+        }
+        &:hover {
+          .qrcode-container {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+.carousel {
+
+}
