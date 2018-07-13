@@ -14,13 +14,7 @@ gulp.task('less', ['clean'], function(){
 })
 
 gulp.task('move', ['clean'], function(){
-  gulp.src('src/**/*.html')
-    .pipe(gulp.dest('dist'));
-  gulp.src('src/**/*.css')
-    .pipe(gulp.dest('dist'));
-  gulp.src('src/**/*.js')
-    .pipe(gulp.dest('dist'));
-  gulp.src('src/**/images/*')
+  gulp.src('src/**/{*.{html,css,js},images/*}')
     .pipe(gulp.dest('dist'));
   console.log(`build time: ${new Date()}`)
 })
