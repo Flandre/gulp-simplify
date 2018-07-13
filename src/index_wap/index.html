@@ -357,6 +357,24 @@
     $('.go-top').on('click', function(){
       $('html,body').animate({scrollTop: '0px'}, 500)
     })
+
+    // scheme跳转
+    // 需自己填入跳转需要的scheme和scheme跳转失败使用的下载页面url
+    var schemeUrl = '', downloadUrl = ''
+    $('.link-btn').on('click', function(e){
+      e.preventDefault()
+      var now = Date.now();
+      if(/ip(hone|ad)/.test(navigator.userAgent.toLowerCase())){
+        location.href = schemeUrl
+      } else {
+        t.append('<iframe src="' + schemeUrl + '" style="display: none;"></iframe>')
+      }
+      setTimeout(function(){
+        if(Date.now() - now < 3200 && downloadUrl){
+          location.href = downloadUrl
+        }
+      }, 3000)
+    })
   </script>
 </body>
 </html>
