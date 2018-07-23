@@ -14,13 +14,13 @@ gulp.task('less', ['clean'], function(){
 })
 
 gulp.task('move', ['clean'], function(){
-  gulp.src('src/**/{*.{html,css,js},images/*}')
+  gulp.src('src/**/{*.{html,css,js},images/**/*}')
     .pipe(gulp.dest('dist'));
   console.log(`build time: ${new Date()}`)
 })
 
 gulp.task('watch', function(){
-  gulp.watch('src/**/*', ['clean', 'less', 'move']);
+  gulp.watch('src/**/**/*', ['clean', 'less', 'move']);
 });
 
 gulp.task('default', ['clean', 'less', 'move'], function() {
