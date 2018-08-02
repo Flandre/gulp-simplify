@@ -395,7 +395,6 @@
     $('#carousel-banner')
       .carousel({ interval: 5000 })
       .on('slide.bs.carousel',function(e){
-        console.log($(e.relatedTarget).attr('data-bgcolor'))
         $('.carousel').css('background', $(e.relatedTarget).attr('data-bgcolor'))
       });
 
