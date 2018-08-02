@@ -133,21 +133,50 @@ a {
         border-bottom: 1px solid #dbdbdb;
         .car-info {
           padding: 20px 30px 10px;
-          .name {
-            font-size: 18px;
-            line-height: 25px;
-            margin-bottom: 10px;
-            color: #333;
+          overflow: hidden;
+          .car-desc {
+            float: left;
+            max-width: 50%;
+            .name {
+              font-size: 18px;
+              line-height: 25px;
+              margin-bottom: 10px;
+              color: #333;
+              white-space: nowrap;
+            }
+            .info {
+              color: #666666;
+              font-size: 14px;
+              line-height: 20px;
+              margin-bottom: 0;
+              white-space: nowrap;
+            }
           }
-          .info {
-            color: #666666;
-            font-size: 14px;
-            line-height: 20px;
-            margin-bottom: 0;
+          .by-week {
+            float: right;
+            max-width: 50%;
+            .name {
+              color: #666666;
+              font-size: 14px;
+              line-height: 20px;
+              margin-bottom: 5px;
+              white-space: nowrap;
+            }
+            .price {
+              color: #D84040;
+              font-size: 14px;
+              line-height: 33px;
+              margin-bottom: 0;
+              white-space: nowrap;
+              strong {
+                font-size: 24px;
+                font-weight: normal;
+              }
+            }
           }
         }
         .car-thumb {
-          padding-bottom: 10px;
+          padding:0 50px 10px;
           img {
             width: 100%;
             height: auto;
@@ -155,30 +184,53 @@ a {
         }
       }
       .price-info {
-        padding: 15px 0 20px;
-        overflow: hidden;
+        padding: 20px 30px;
+        text-align: right;
         .by-month,
-        .by-week {
-          width: 50%;
-          float: left;
-          p {
-            text-align: center;
+        .by-vip {
+          display: inline-block;
+          margin-left: 20px;
+          span {
             &.name {
               color: #666666;
-              font-size: 14px;
-              line-height: 20px;
-              margin-bottom: 5px;
+              font-size: 12px;
+              line-height: 14px;
             }
             &.price {
-              color: #D84040;
-              font-size: 14px;
-              line-height: 33px;
-              margin-bottom: 0;
+              color: #666666;
+              font-size: 12px;
+              line-height: 14px;
+            }
+          }
+        }
+        .by-month {
+          margin-left: 0;
+        }
+        .by-vip {
+          span {
+            &.price {
               strong {
-                font-size: 24px;
+                font-size: 18px;
+                color: #D84040;
                 font-weight: normal;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .car-type {
+    .car-list {
+      .list-item {
+        .car-container {
+          .car-info {
+            padding: 15px;
+          }
+          .car-thumb {
+            padding:0 20px 10px;
           }
         }
       }
@@ -207,6 +259,8 @@ a {
           .car-info {
             position: absolute;
             padding-left: 120px;
+            padding-right: 0;
+            width: 100%;
             top: 0;
             .name {
               font-size: 16px;
@@ -222,6 +276,7 @@ a {
             height: 90px;
             position: relative;
             float: left;
+            padding: 0;
             img {
               max-width: 100%;
               max-height: 100%;
@@ -246,12 +301,6 @@ a {
                 margin-bottom: 0;
               }
             }
-          }
-          .by-month {
-            float: left;
-          }
-          .by-week {
-            float: right;
           }
         }
       }
