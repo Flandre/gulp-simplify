@@ -244,14 +244,18 @@ a {
           display: inline-block;
           margin-left: 20px;
           span {
+            strong {
+              font-weight: normal;
+              color: #000;
+            }
             &.name {
               color: #666666;
-              font-size: 12px;
+              font-size: 14px;
               line-height: 14px;
             }
             &.price {
               color: #666666;
-              font-size: 12px;
+              font-size: 14px;
               line-height: 14px;
             }
           }
@@ -266,6 +270,25 @@ a {
                 font-size: 18px;
                 color: #D84040;
                 font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .car-type {
+    .car-list {
+      .list-item {
+        .price-info {
+          .by-month,
+          .by-vip {
+            span {
+              &.name ,
+              &.price {
+                font-size: 12px;
               }
             }
           }
