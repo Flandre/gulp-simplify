@@ -154,6 +154,7 @@ a {
       line-height: 28px;
     }
     .car-pics {
+      margin-bottom: 40px;
       .big-pic {
         margin-bottom: 30px;
         img {
@@ -163,7 +164,79 @@ a {
       }
       .control-box {
         height: 80px;
-        background: #000;
+        position: relative;
+        padding: 0 50px;
+        .control-main {
+          height: 80px;
+          overflow: hidden;
+          position: relative;
+          .thumb-box {
+            white-space: nowrap;
+            position: absolute;
+            transition: 300ms;
+            top: 0;
+            left: 0;
+            .thumb-item {
+              width: 120px;
+              height: 80px;
+              margin-right: 20px;
+              float: left;
+              position: relative;
+              &.active {
+                border: 2px solid #FFB200;
+              }
+              img {
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+        .control-btn {
+          width: 30px;
+          height: 80px;
+          border: 1px solid #E2E2E2;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 10px 16px;
+          position: absolute;
+          background-color: #fff;
+          cursor: pointer;
+          &.prev {
+            background-image: url("images/arrow-left.png");
+            top: 0;
+            left: 0;
+          }
+          &.next {
+            background-image: url("images/arrow-right.png");
+            top: 0;
+            right: 0;
+          }
+          &.disable {
+            &.prev {
+              background-image: url("images/arrow-left-disable.png");
+            }
+            &.next {
+              background-image: url("images/arrow-right-disable.png");
+            }
+          }
+        }
+      }
+    }
+    .car-info {
+      img {
+        width: 100%;
+        height: auto;
       }
     }
   }

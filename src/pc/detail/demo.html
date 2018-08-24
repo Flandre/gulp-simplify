@@ -81,19 +81,34 @@
         <h1 class="title">昊锐/1.8T 自动 豪华型 斯柯达 5座</h1>
         <div class="car-pics">
           <div class="big-pic">
-            <img src="../../images/cars/demo/img1.png">
+            <img src="">
           </div>
           <div class="control-box">
             <div class="prev control-btn"></div>
             <div class="control-main">
               <div class="thumb-box">
                 <div class="thumb-item">
-
+                  <img src="../../images/cars/demo/img1.png">
+                </div>
+                <div class="thumb-item">
+                  <img src="../../images/cars/demo/img2.png">
+                </div>
+                <div class="thumb-item">
+                  <img src="../../images/cars/demo/img3.png">
+                </div>
+                <div class="thumb-item">
+                  <img src="../../images/cars/demo/img4.png">
+                </div>
+                <div class="thumb-item">
+                  <img src="../../images/cars/demo/img5.png">
                 </div>
               </div>
             </div>
             <div class="next control-btn"></div>
           </div>
+        </div>
+        <div class="car-info">
+          <img src="../../images/cars/demo/info.png">
         </div>
       </div>
     </div>
@@ -188,6 +203,10 @@
           $('html,body').animate({scrollTop: '0px'}, 500)
         })
     }
+    $('.thumb-box').css('width', $('.thumb-item').length * 140 - 20)
+    $('.prev').addClass('disable')
+    $('.thumb-item:first-child').addClass('active')
+    $('.big-pic > img')[0].src = $('.thumb-item.active > img')[0].src
   })
   $(window).scroll(function(){
     if(window.innerHeight > window.scrollY){
@@ -201,6 +220,40 @@
           $('html,body').animate({scrollTop: '0px'}, 500)
         })
     }
+  })
+  $('.prev').on('click', function(){
+    $('.next').removeClass('disable')
+    if(!$('.prev').hasClass('disable')){
+      var left = parseInt($('.thumb-box').css('left').replace('px', '')) + $('.control-main')[0].offsetWidth
+      if(left > 0){
+        $('.prev').addClass('disable')
+        left = 0
+      }
+      $('.thumb-box').css('left', left)
+    }
+  })
+  $('.next').on('click', function(){
+    $('.prev').removeClass('disable')
+    if(!$('.next').hasClass('disable')){
+      var left = parseInt($('.thumb-box').css('left').replace('px', '')) - $('.control-main')[0].offsetWidth
+      if(left < $('.control-main')[0].offsetWidth - $('.thumb-box')[0].offsetWidth){
+        $('.next').addClass('disable')
+        left = $('.control-main')[0].offsetWidth - $('.thumb-box')[0].offsetWidth
+      }
+      $('.thumb-box').css('left', left)
+    }
+  })
+  $('.thumb-item').on('click', function(){
+    $(this).addClass('active').siblings().removeClass('active')
+    $('.big-pic > img')[0].src = $('.thumb-item.active > img')[0].src
+  })
+  function resize() {
+    if($('.control-main')[0].offsetWidth - parseInt($('.thumb-box').css('left').replace('px', '')) < $('.thumb-box')[0].offsetWidth){
+      $('.next').removeClass('disable')
+    }
+  }
+  $(window).on('resize', function(){
+    resize()
   })
 </script>
 </body>
